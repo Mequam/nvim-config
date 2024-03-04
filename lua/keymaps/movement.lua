@@ -19,8 +19,3 @@ vim.keymap.set('','<C-UP>',"<C-W><UP>")
 vim.keymap.set('','<C-DOWN>',"<C-W><DOWN>")
 vim.keymap.set('','<C-RIGHT>',"<C-W><RIGHT>")
 vim.keymap.set('','<C-LEFT>',"<C-W><LEFT>")
-
---vim.keymap.set('', 'T', function()
---  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
---end, {remap=true})
-

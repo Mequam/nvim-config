@@ -1,13 +1,30 @@
 local o = vim.opt
 
+--backup stuff
 o.undofile = true -- Persistent undo's across all sessions
 o.backup = false -- Don't write backups. (For better performance and, unneeded non-sense
 o.writebackup = false -- Don't write backups.
-o.shiftwidth = 2 -- Insert two shifts per indent.
+
+--tab stuff
+o.shiftwidth = 3 -- Insert two shifts per indent.
+o.tabstop = 3
+o.expandtab = true -- Convert tabs to spaces.
+o.smartindent = true -- Non-strict cindent.
 o.autoindent = true -- Copy indent from the current line when starting a new line
 o.breakindent = true -- Indent wrapped lines too.
 o.copyindent = true -- Copy the structure of the existing lines' indents.
-o.expandtab = true -- Convert tabs to spaces.
-o.smartindent = true -- Non-strict cindent.
-o.number = true -- Enable line numbers
 
+
+
+--relative numbering
+o.number = true -- Enable line numbers
+o.relativenumber = true --relative numbers!
+
+
+--folding
+o.foldmethod="syntax"
+o.foldlevel=100
+
+--white space display
+--o.listchars = "nbsp:_,tab:\|.,trail:~,extends:>,precedes:<"
+o.list = true
