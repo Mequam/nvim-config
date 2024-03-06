@@ -19,3 +19,4 @@ vim.keymap.set('','<C-UP>',"<C-W><UP>")
 vim.keymap.set('','<C-DOWN>',"<C-W><DOWN>")
 vim.keymap.set('','<C-RIGHT>',"<C-W><RIGHT>")
 vim.keymap.set('','<C-LEFT>',"<C-W><LEFT>")
+
