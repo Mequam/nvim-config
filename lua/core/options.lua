@@ -15,7 +15,6 @@ o.breakindent = true -- Indent wrapped lines too.
 o.copyindent = true -- Copy the structure of the existing lines' indents.
 
 
-
 --relative numbering
 o.number = true -- Enable line numbers
 o.relativenumber = true --relative numbers!
@@ -28,3 +27,7 @@ o.foldlevel=100
 --white space display
 --o.listchars = "nbsp:_,tab:\|.,trail:~,extends:>,precedes:<"
 o.list = true
+
+--corsor stuff
+o.cursorline = true
+

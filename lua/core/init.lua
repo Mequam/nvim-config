@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 M.setup = function()
   require("lazy").setup("plugins")
   require("core.options")
+  require("core.colors")
   require("keymaps.movement")
 end
 
