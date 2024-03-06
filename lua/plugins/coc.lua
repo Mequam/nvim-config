@@ -30,5 +30,8 @@ return {
       vim.keymap.set("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
       -- Use <c-space> to trigger completion
       vim.keymap.set("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
+
+      vim.keymap.set("","<C-_>",":CocList -A outline<CR>",{noremap=true})
+      vim.keymap.set("","<leader><C-_>",":CocList -A symbols<CR>",{noremap=true})
 end
 }

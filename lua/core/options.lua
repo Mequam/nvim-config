@@ -31,3 +31,5 @@ o.list = true
 --corsor stuff
 o.cursorline = true
 
+--leader mapping
+vim.g.mapleader = " "
