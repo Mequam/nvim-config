@@ -1,3 +1,4 @@
+--set up python only file options
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "py",
   callback = function(args)

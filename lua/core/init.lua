@@ -18,6 +18,7 @@ M.setup = function()
   require("lazy").setup("plugins")
   require("core.colors")
   require("keymaps.movement")
+  require("keymaps.folds")
   require("core.auto_cmds")
 end
 
