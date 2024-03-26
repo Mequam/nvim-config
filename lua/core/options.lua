@@ -1,5 +1,9 @@
 local o = vim.opt
 
+--split config
+o.splitbelow = true
+o.splitright= true
+
 --backup stuff
 o.undofile = true -- Persistent undo's across all sessions
 o.backup = false -- Don't write backups. (For better performance and, unneeded non-sense

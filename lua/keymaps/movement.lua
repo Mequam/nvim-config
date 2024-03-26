@@ -15,10 +15,10 @@ vim.keymap.set('', 's', function()
 end, {remap=true})
 
 --movement for splits
-vim.keymap.set('','<C-UP>',"<C-W><UP>")
-vim.keymap.set('','<C-DOWN>',"<C-W><DOWN>")
-vim.keymap.set('','<C-RIGHT>',"<C-W><RIGHT>")
-vim.keymap.set('','<C-LEFT>',"<C-W><LEFT>")
+vim.keymap.set('n','<leader><UP>',"<C-W><UP>")
+vim.keymap.set('n','<leader><DOWN>',"<C-W><DOWN>")
+vim.keymap.set('n','<leader><RIGHT>',"<C-W><RIGHT>")
+vim.keymap.set('n','<leader><LEFT>',"<C-W><LEFT>")
 
 
 vim.keymap.set('n','<TAB>',":tabn<CR>")
