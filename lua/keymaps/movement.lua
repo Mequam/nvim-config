@@ -20,3 +20,6 @@ vim.keymap.set('','<C-DOWN>',"<C-W><DOWN>")
 vim.keymap.set('','<C-RIGHT>',"<C-W><RIGHT>")
 vim.keymap.set('','<C-LEFT>',"<C-W><LEFT>")
 
+
+vim.keymap.set('n','<TAB>',":tabn<CR>")
+
