@@ -3,8 +3,6 @@ return {
   branch = "master",
   --build = "npm ci", --this needs to run after install, but doesn't for some reason, so run it yourself after install
   config = function ()
-     print("hello from the function")
-
      function _G.check_back_space()
       local col = vim.fn.col('.') - 1
       return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil

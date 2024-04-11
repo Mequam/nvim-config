@@ -19,6 +19,7 @@ M.setup = function()
   require("core.colors")
   require("keymaps.movement")
   require("keymaps.folds")
+  require("keymaps.terminal")
   require("core.auto_cmds")
   
   --require("core.lsp_config")
