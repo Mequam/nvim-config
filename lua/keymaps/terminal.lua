@@ -3,6 +3,12 @@ vim.keymap.set('n','<leader>k',function ()
                      "terminator"
                   })
                end)
+
+vim.keymap.set('n','<leader>t',function ()
+                  vim.fn.system({
+                     "terminator"
+                  })
+               end)
 vim.keymap.set('n','k',":tab new<CR>:terminal<CR>A")
 
 --start another instance of neovim

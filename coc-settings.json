@@ -4,6 +4,24 @@
       "host": "127.0.0.1",
       "filetypes": ["gd", "gdscript", "gdscript3"],
       "port": 6005
+    },
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": [
+        "--lsp"
+      ],
+      "rootPatterns": [
+        ".stack.yaml",
+        ".hie-bios",
+        "BUILD.bazel",
+        "cabal.config",
+        "package.yaml"
+      ],
+      "filetypes": [
+        "hs",
+        "lhs",
+        "haskell"
+      ]
     }
    }
 }

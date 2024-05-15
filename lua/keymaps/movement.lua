@@ -1,6 +1,7 @@
 -- set the keybindings for the hop plugin
 local hop = require('hop')
 local directions = require('hop.hint').HintDirection
+local pick_on_input = require('custom.content_search').pick_on_input
 
 --hop down
 vim.keymap.set('', '<C-W>', function()
@@ -32,3 +33,5 @@ vim.keymap.set('n','<C-LEFT>',"<C-W><LEFT>")
 
 --tab motion
 vim.keymap.set('n','<TAB>',":tabn<CR>")
+
+vim.keymap.set('n','<leader>/',pick_on_input)
