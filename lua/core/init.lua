@@ -14,14 +14,12 @@ M.setup = function()
        lazypath,
      })
    end
-   vim.opt.rtp:prepend(lazypath)
+
+  vim.opt.rtp:prepend(lazypath)
   require("lazy").setup("plugins")
   require("core.colors")
-  require("keymaps.movement")
-  require("keymaps.folds")
-  require("keymaps.terminal")
   require("core.auto_cmds")
-  
+  require("keymaps").setup()
   --require("core.lsp_config")
 end
 

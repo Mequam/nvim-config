@@ -16,7 +16,7 @@ return {
                            fname_width=40
                         }})
          end)
-
+         vim.keymap.set('n','<Leader>p',telescope.registers)
          vim.keymap.set('n','gs',telescope.git_status)
          vim.keymap.set('n','gh',telescope.git_bcommits)
       end
