@@ -4,16 +4,16 @@ local directions = require('hop.hint').HintDirection
 local pick_on_input = require('custom.content_search').pick_on_input
 
 --hop down
-vim.keymap.set('', '<C-W>', function()
+vim.keymap.set('n', '<C-W>', function()
   hop.hint_words({ direction = directions.AFTER_CURSOR })
-end, {remap=true})
+end, {remap=false,nowait=true})
 --still include window functionality
 vim.keymap.set('n','<leader>w','<C-W>')
 
 --hop up
-vim.keymap.set('', '<C-S>', function()
+vim.keymap.set('n', '<C-S>', function()
   hop.hint_words({ direction = directions.BEFORE_CURSOR })
-end, {remap=true})
+end, {remap=false})
 
 vim.keymap.set('', 's', function()
   hop.hint_char2({ direction = directions.AFTER_CURSOR, current_line_only = true})
