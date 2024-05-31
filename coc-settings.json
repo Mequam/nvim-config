@@ -23,5 +23,6 @@
         "haskell"
       ]
     }
-   }
+   },
+   "outline.splitCommand": "below 8sp"
 }

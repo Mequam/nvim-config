@@ -32,6 +32,9 @@ if &background ==# 'dark'
       let g:terminal_color_{i} = g:terminal_ansi_colors[i]
     endfor
   endif
+
+  hi TelescopeSelection guibg=None gui=underline
+
   hi Normal guifg=#08e098 guibg=None gui=NONE cterm=NONE
   hi CursorLineNr guifg=None guibg=None gui=NONE cterm=NONE
   hi FoldColumn guifg=#928374 guibg=#1c1c1c gui=NONE cterm=NONE
@@ -62,7 +65,7 @@ if &background ==# 'dark'
   hi TabLineSel guifg=#fbf1c7 guibg=#1c1c1c gui=bold cterm=bold
   hi ToolbarButton guifg=#fbf1c7 guibg=#303030 gui=bold cterm=bold
   hi ToolbarLine guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-  hi Visual guifg=#1c1c1c guibg=#83a598 gui=NONE cterm=NONE
+  hi Visual guifg=#000000 guibg=#006644 gui=NONE cterm=NONE
   hi WildMenu guifg=#83a598 guibg=#504945 gui=bold cterm=bold
   hi EndOfBuffer guifg=#504945 guibg=NONE gui=NONE cterm=NONE
   hi Conceal guifg=#83a598 guibg=NONE gui=NONE cterm=NONE
@@ -157,7 +160,7 @@ else
   hi TabLineSel guifg=#282828 guibg=#fbf1c7 gui=bold cterm=bold
   hi ToolbarButton guifg=#282828 guibg=#bdae93 gui=bold cterm=bold
   hi ToolbarLine guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
-  hi Visual guifg=#fbf1c7 guibg=#076678 gui=NONE cterm=NONE
+  hi Visual guifg=#fbf1c7 guibg=#041222 gui=NONE cterm=NONE
   hi WildMenu guifg=#076678 guibg=#e5d4b1 gui=bold cterm=bold
   hi EndOfBuffer guifg=#e5d4b1 guibg=NONE gui=NONE cterm=NONE
   hi Conceal guifg=#076678 guibg=NONE gui=NONE cterm=NONE

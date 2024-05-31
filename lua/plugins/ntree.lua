@@ -15,10 +15,26 @@ return {
       --      position = "float"
       --   })
       --end)
-
+      --require('neo-tree').setup({
+      --   sources = { "filesystem", "buffers", "git_status", "symbols" },
+      --})
+      ntree_command = require('neo-tree.command')
       vim.keymap.set('','<Leader>n',function ()
-         require('neo-tree.command').execute({
+         ntree_command.execute({
+            action="close"
+         })
+         ntree_command.execute({
             position = "right"
+         })
+      end)
+
+      vim.keymap.set('','<Leader>o',function ()
+         ntree_command.execute({
+            action="close"
+         })
+         ntree_command.execute({
+            position = "right",
+            source = "buffers"
          })
       end)
     end
