@@ -5,6 +5,12 @@
       "filetypes": ["gd", "gdscript", "gdscript3"],
       "port": 6005
     },
+    "notes":{
+      "command" : "zk",
+      "args":["lsp"] ,
+      "filetypes": ["markdown"],
+      "rootPatterns": [".zk"]
+    },
     "haskell": {
       "command": "haskell-language-server-wrapper",
       "args": [

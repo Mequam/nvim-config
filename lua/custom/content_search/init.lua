@@ -15,7 +15,7 @@ local search_contents = function(opts)
   end
 
    local ret_val = {}
-   local handle = io.popen("grep -Rn --exclude-dir=.?* --exclude=.?* " .. opts.directory .. " -e '" .. opts.search .. "' 2>/dev/null")
+   local handle = io.popen("grep -Rin --exclude-dir=.?* --exclude=.?* " .. opts.directory .. " -e '" .. opts.search .. "' 2>/dev/null")
 
    local line = handle:read("*l")
    while line do

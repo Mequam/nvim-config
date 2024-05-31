@@ -19,7 +19,7 @@ return {
       --   sources = { "filesystem", "buffers", "git_status", "symbols" },
       --})
       ntree_command = require('neo-tree.command')
-      vim.keymap.set('','<Leader>n',function ()
+      vim.keymap.set('','<leader>t',function ()
          ntree_command.execute({
             action="close"
          })
@@ -28,7 +28,7 @@ return {
          })
       end)
 
-      vim.keymap.set('','<Leader>o',function ()
+      vim.keymap.set('','<leader>o',function ()
          ntree_command.execute({
             action="close"
          })

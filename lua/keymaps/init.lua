@@ -8,7 +8,8 @@ M.setup = function ()
 
 
    vim.keymap.set("n",'<leader>s',':CocOutline<cr><DOWN><C-UP>',{nowait=true,remap=true})
-   vim.keymap.set("n",'<leader>w','<leader>n<C-LEFT><leader>s',{remap=true})
+   --TODO: this should point to combined functions, not to the keybindings
+   vim.keymap.set("n",'<leader>w','<leader>t<C-LEFT><leader>s',{remap=true})
 end
 
 return M
