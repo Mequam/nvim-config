@@ -1,6 +1,7 @@
 {
   "coc.nvim": { "branch": "master", "commit": "ba3c0a944d35f7e42cceecffcf9bc7c25a22f23f" },
   "fzf": { "branch": "master", "commit": "124cd70710cb7c94ef2282773494bb0d727598d8" },
+  "hologram.nvim": { "branch": "main", "commit": "f5194f71ec1578d91b2e3119ff08e574e2eab542" },
   "hop.nvim": { "branch": "master", "commit": "036462a345792279c58f2f6445756efab706f04a" },
   "image.nvim": { "branch": "master", "commit": "645f997d171ea3d2505986a0519755600a26f02f" },
   "lazy.nvim": { "branch": "main", "commit": "eab487c2520f0fe9e54eb5e3ea0606e20512492e" },

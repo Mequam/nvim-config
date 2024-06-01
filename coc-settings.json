@@ -8,8 +8,7 @@
     "notes":{
       "command" : "zk",
       "args":["lsp"] ,
-      "filetypes": ["markdown"],
-      "rootPatterns": [".zk"]
+      "filetypes": ["markdown"]
     },
     "haskell": {
       "command": "haskell-language-server-wrapper",

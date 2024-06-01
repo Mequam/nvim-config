@@ -37,7 +37,15 @@ return {
          vim.api.nvim_set_current_dir("~/Documents/notes/primary_zk/")
          require("zk.commands").get("ZkNotes")()
          vim.api.nvim_set_current_dir(cw)
-      end)
+      end
+      )
+
+   vim.api.nvim_create_autocmd("FileType", {
+     pattern = "markdown",
+     callback = function(args)
+         vim.keymap.set('n','gf','gf',{buffer = args.buf})
+     end
+   })
   end
 }
 

@@ -13,7 +13,6 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType",{
    pattern="gd",
    callback = function(args)
-      print("setting fold method to expr")
       vim.opt_local.foldmethod = "expr"
       vim.opt_local.expandtab=false
    end

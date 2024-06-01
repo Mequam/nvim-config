@@ -4,7 +4,11 @@ return {
       config = function ()
          --ctrl p with telescope plugin
          local telescope = require('telescope.builtin')
-         vim.keymap.set('','<C-p>',telescope.find_files)
+         vim.keymap.set('','<C-p>',
+         function()
+            telescope.find_files(require('telescope.themes').get_dropdown({}))
+         end
+         )
          vim.keymap.set('n','gf', function ()
                                     telescope.lsp_references({
                                        fname_width=100
