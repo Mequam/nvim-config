@@ -25,5 +25,8 @@ return {
          vim.keymap.set('n','<Leader>p',telescope.registers)
          vim.keymap.set('n','gs',telescope.git_status)
          vim.keymap.set('n','gh',telescope.git_bcommits)
+
+
+         require('telescope').load_extension('coc')
       end
     }

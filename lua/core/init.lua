@@ -20,6 +20,7 @@ M.setup = function()
   require("core.colors")
   require("core.auto_cmds")
   require("keymaps").setup()
+  require("custom.inkscape_summoner")
   --require("core.lsp_config")
 end
 
