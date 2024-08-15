@@ -1,6 +1,6 @@
 function summon_inkscape()
 
-   local handle = io.popen("inkscape ~/Documents/overlay.svg")
+   local handle = io.popen("inkscape ~/Documents/overlay.svg 2> /dev/null > /dev/null")
    --handle = io.popen("~/.config/nvim/lua/custom/inkscape_summoner/track_inkscape.sh")
    while handle:read("*l") do sleep(1) end
 

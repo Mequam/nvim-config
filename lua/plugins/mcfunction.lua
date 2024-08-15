@@ -1,0 +1,3 @@
+return {
+   "deltawhy/vim-mcfunction"
+}
