@@ -1,6 +1,6 @@
 vim.keymap.set('n','<leader>k',function ()
                   vim.fn.system({
-                     "terminator"
+                     "powershell.exe"
                   })
                end)
 
