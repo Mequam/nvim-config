@@ -22,15 +22,31 @@ return {
     })
 
       zk = require('zk')
-      function new_note()
+      --
+      function new_note(directory)
          local name = vim.fn.input("note name: ")
          local cw = vim.fn.getcwd()
-         vim.api.nvim_set_current_dir("~/Documents/notes/primary_zk/")
+         vim.api.nvim_set_current_dir(directory)
          zk.new({title=name})
          vim.api.nvim_set_current_dir(cw)
       end
       
-      vim.keymap.set('n','<leader>n',new_note) --make a new note
+      vim.keymap.set('n','<leader>n',function ()
+         new_note("~/Documents/notes/primary_zk/")
+      end) --make a new note
+
+      vim.keymap.set('n','<leader>j',function ()
+         new_note("~/Documents/posts/")
+      end) --make a new note
+
+      vim.keymap.set('n','<leader><C-J>',function ()
+         local cw = vim.fn.getcwd()
+         
+         vim.api.nvim_set_current_dir("~/Documents/posts/")
+         require("zk.commands").get("ZkNotes")()
+         vim.api.nvim_set_current_dir(cw)
+      end) --make a new note
+
       vim.keymap.set('n','<C-N>',function () --find note
          local cw = vim.fn.getcwd()
          

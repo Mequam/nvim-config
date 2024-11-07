@@ -24,6 +24,7 @@ hi! link MessageWindow PMenu
 hi! link PopupNotification Todo
 hi! link CurSearch Search
 
+
 if &background ==# 'dark'
   if (has('termguicolors') && &termguicolors) || has('gui_running')
     let g:terminal_ansi_colors = ['#1c1c1c', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#a89984', '#928374', '#fb4934', '#b8bb26', '#fabd2f', '#83a598', '#d3869b', '#8ec07c', '#ebdbb2']
@@ -886,3 +887,6 @@ endif
 " vim: et ts=8 sw=2 sts=2
 
 hi Normal guibg=None
+
+" bionic coloring for compatability reasons
+hi BionicReadingHL gui=standout cterm=underline

@@ -32,6 +32,7 @@ return {
       update_in_insert_mode = true,
     })
    vim.keymap.set('n','<leader>h',':BRToggle<cr>')
+   vim.cmd.normal(":hi BionicReadingHL gui=standout cterm=underline")
    end
 }
 
