@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
-
+--tab ordering in godot
 vim.api.nvim_create_autocmd("FileType",{
    pattern="gd",
    callback = function(args)
@@ -17,3 +17,11 @@ vim.api.nvim_create_autocmd("FileType",{
       vim.opt_local.expandtab=false
    end
    })
+
+--html syntax highlighting in an njk file
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+   pattern = "*.njk",
+   callback = function()
+      vim.opt_local.syntax = "html"
+   end
+})
