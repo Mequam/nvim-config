@@ -886,7 +886,7 @@ endif
 " Background: any
 " vim: et ts=8 sw=2 sts=2
 
-hi Normal guibg=None
+hi Normal ctermbg=None
 
 " bionic coloring for compatability reasons
 hi BionicReadingHL gui=standout cterm=underline

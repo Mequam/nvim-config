@@ -25,3 +25,14 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
       vim.opt_local.syntax = "html"
    end
 })
+
+
+--set up python only file options
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "ts",
+  callback = function(args)
+     vim.opt_local.tabstop="2"
+     vim.opt_local.shiftwidth="2"
+     vim.opt_local.expandtab=true
+  end
+})

@@ -1,7 +1,7 @@
 -- contains color configuration for neo vim
 
 
-vim.api.nvim_set_hl(0,"Normal", {guibg=None})
+vim.api.nvim_set_hl(0,"Normal", {guibg=None,ctermbg=None})
 vim.api.nvim_set_hl(0,"GitGutterAddInvisible", {ctermbg=None})
 vim.api.nvim_set_hl(0,"GitGutterChangeInvisible", {ctermbg=None})
 vim.api.nvim_set_hl(0,"GitGutterDeleteInvisible", {ctermbg=None})
@@ -48,4 +48,8 @@ vim.api.nvim_set_hl(0,"DiffRemoved", {ctermbg=00, ctermfg=01})
 vim.api.nvim_set_hl(0,"DiffText", {ctermbg=00, ctermfg=01})
 vim.api.nvim_set_hl(0,"DiffChange", {ctermbg=05, ctermfg=00})
 
+
 vim.cmd 'colorscheme copper'
+
+vim.api.nvim_set_hl(0,"Normal", {guibg=None,ctermbg=None})
+vim.api.nvim_set_hl(0,"CursorLine", {gctermbg=none})
