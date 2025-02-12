@@ -15,7 +15,7 @@ ensure_directory $BACKUP_DIRECTORY
 
 #returns a list of git sources from the config files
 function get_git_sources() {
-   cat ../plugins/* | grep '^return {' -A 1 | grep '.*/.*' | tr -d ' ' | cut -d',' -f1 | tr -d \"\'S
+   cat ../lua/plugins/* | grep '^return {' -A 1 | grep '.*/.*' | tr -d ' ' | cut -d',' -f1 | tr -d \"\'S
 }
 
 STARTING_DIR=$(pwd)
