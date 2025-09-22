@@ -24,17 +24,7 @@ return {
             action="close"
          })
          ntree_command.execute({
-            position = "right"
-         })
-      end)
-
-      vim.keymap.set('','<leader>o',function ()
-         ntree_command.execute({
-            action="close"
-         })
-         ntree_command.execute({
-            position = "right",
-            source = "buffers"
+            position = "float"
          })
       end)
     end

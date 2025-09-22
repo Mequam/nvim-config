@@ -1,30 +1,35 @@
 {
-   "languageserver" : {
+  "coc.preferences.formatOnSave": true,
+  "languageserver": {
+    "coc.preferences.formatOnSaveFiletypes": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "json",
+      "graphql",
+      "handlebars"
+    ],
     "terraform": {
-       "command":"terraform-ls",
-       "args": ["serve"],
-       "filetypes": [
-          "terraform","tf"
-       ],
-       "initializationOptions": {},
-       "settings": {}
-
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
     },
     "godot": {
       "host": "127.0.0.1",
       "filetypes": ["gd", "gdscript", "gdscript3"],
       "port": 6005
     },
-    "notes":{
-      "command" : "zk",
-      "args":["lsp"] ,
-      "filetypes": ["markdown","md"]
+    "notes": {
+      "command": "zk",
+      "args": ["lsp"],
+      "filetypes": ["markdown", "md"]
     },
     "haskell": {
       "command": "haskell-language-server-wrapper",
-      "args": [
-        "--lsp"
-      ],
+      "args": ["--lsp"],
       "rootPatterns": [
         ".stack.yaml",
         ".hie-bios",
@@ -32,13 +37,9 @@
         "cabal.config",
         "package.yaml"
       ],
-      "filetypes": [
-        "hs",
-        "lhs",
-        "haskell"
-      ]
+      "filetypes": ["hs", "lhs", "haskell"]
     }
-   },
+  },
   "outline.splitCommand": "below 8sp",
   "java.imports.gradle.wrapper.checksums": [
     {

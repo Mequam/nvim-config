@@ -9,22 +9,24 @@ return {
             telescope.find_files(require('telescope.themes').get_dropdown({}))
          end
          )
-         vim.keymap.set('n','gf', function ()
-                                    telescope.lsp_references({
-                                       fname_width=100
-                                    })
-                              end
-                                 )
-         vim.keymap.set('n','gd', function ()
-                        telescope.lsp_definitions({opts={
-                           fname_width=40
-                        }})
-         end)
+         --vim.keymap.set('n','gf', function ()
+         --                           telescope.lsp_references({
+         --                              fname_width=100
+         --                           })
+         --                     end
+         --                        )
+         --vim.keymap.set('n','gd', function ()
+         --               telescope.lsp_definitions({opts={
+         --                  fname_width=40
+         --               }})
+         --end)
 
          vim.keymap.set('n','<Leader>b',telescope.buffers)
          vim.keymap.set('n','<Leader>p',telescope.registers)
          vim.keymap.set('n','gs',telescope.git_status)
          vim.keymap.set('n','gh',telescope.git_bcommits)
+         vim.keymap.set('n','<Leader>/',telescope.live_grep)
+         vim.keymap.set('n','<Leader>o',telescope.oldfiles)
 
 
          require('telescope').load_extension('coc')

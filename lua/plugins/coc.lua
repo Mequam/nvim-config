@@ -32,5 +32,14 @@ return {
 
       vim.keymap.set("","<C-_>",":CocList -A outline<CR>",{noremap=true})
       vim.keymap.set("","<Leader><C-_>",":CocList -A symbols<CR>",{noremap=true})
+
+
+      vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+         pattern = "*.ts",
+         callback = function(args)
+            vim.keymap.set("n","gd",":CocCommand tsserver.goToSourceDefinition<CR>",{noremap=true})
+         end
+      })
 end
+
 }
