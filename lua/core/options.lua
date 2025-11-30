@@ -2,7 +2,7 @@ local o = vim.opt
 
 --split config
 o.splitbelow = true
-o.splitright= true
+o.splitright = true
 
 --backup stuff
 o.undofile = true -- Persistent undo's across all sessions
@@ -18,15 +18,13 @@ o.autoindent = true -- Copy indent from the current line when starting a new lin
 o.breakindent = true -- Indent wrapped lines too.
 o.copyindent = true -- Copy the structure of the existing lines' indents.
 
-
 --relative numbering
 o.number = true -- Enable line numbers
 o.relativenumber = true --relative numbers!
 
-
 --folding
-o.foldmethod="syntax"
-o.foldlevel=100
+o.foldmethod = "syntax"
+o.foldlevel = 100
 
 --white space display
 --o.listchars = "nbsp:_,tab:\|.,trail:~,extends:>,precedes:<"
