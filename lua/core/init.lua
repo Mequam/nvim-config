@@ -21,7 +21,7 @@ M.setup = function()
   require("core.auto_cmds")
   require("keymaps").setup()
   require("custom.inkscape_summoner")
-  --require("core.lsp_config")
+  require("core.lsp_config") --handles lsp config
 end
 
 return M
