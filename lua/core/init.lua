@@ -1,4 +1,5 @@
 require("core.options")
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -18,3 +19,4 @@ require("core.colors")
 require("core.auto_cmds")
 require("keymaps").setup()
 require("custom.inkscape_summoner")
+require("core.lsp_config") --handles lsp config
