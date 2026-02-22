@@ -7,29 +7,51 @@ end
 
 local ASCII_DIR = vim.fn.stdpath("config") .. "/images/"
 
-local function loadAscii()
+--randomly selects an ascii file to display,
+--returns the path to the selected file
+local function selectAsciiFileName()
 	math.randomseed(os.time())
 	local collected = {}
 	local filenames = vim.fn.readdir(ASCII_DIR)
 	if #filenames == 0 then
 		return {}
 	end
-	for ____, filename in ipairs(filenames) do
-		local fullPath = ASCII_DIR .. tostring(filename)
-		if vim.fn.filereadable(fullPath) == 1 then
-			collected[#collected + 1] = fullPath
-		end
-	end
-	local random = math.random(#collected)
-	local picked = collected[random]
-	if not picked then
-		return vim.print("failed to pick file (no file picked)")
-	end
-	return vim.fn.readfile(picked)
+
+	return filenames[math.random(#filenames)]
 end
 
+local sayingMap = {
+   blue="Stay Curious",
+   black="Stay Ambitious",
+   red="Stay Passionate",
+   green="Stay Strong",
+   white="Stay Humble"
+}
+
+local function loadAsciiAndFooter()
+	local fileName = selectAsciiFileName()
+	if not fileName then
+		return vim.print("failed to pick file (no file picked)")
+	end
+
+   --parse out the saying from file.name
+   local dotIndex = string.find(fileName,".txt")
+   local fileNameStart = string.sub(fileName,0,dotIndex-1)
+   local saying = sayingMap[fileNameStart]
+   if saying == nil then
+      saying = "Keep Debuging"
+   end
+
+	return {
+	         header=vim.fn.readfile(ASCII_DIR .. fileName),
+	         footer=saying
+	      }
+end
+
+local footerWithSaying = loadAsciiAndFooter()
+
 local dashboard = require("alpha.themes.dashboard")
-dashboard.section.header.val = loadAscii()
+dashboard.section.header.val = footerWithSaying.header
 
 dashboard.section.buttons.val = {
 	dashboard.button("f", "📜  Find file", ":FzfLua files <CR>"),
@@ -40,11 +62,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("q", "❌  Quit Neovim", ":qa<CR>"),
 }
 
-local function footer()
-	return "Stay Curious"
-end
-
-dashboard.section.footer.val = footer()
+dashboard.section.footer.val = footerWithSaying.footer
 
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
