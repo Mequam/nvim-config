@@ -18,3 +18,7 @@ require("lazy").setup("plugins")
 require("core.colors")
 require("core.auto_cmds")
 require("keymaps").setup()
+require("notify").setup({
+   background_colour = "#000000",
+   merge_duplicates = true
+})
