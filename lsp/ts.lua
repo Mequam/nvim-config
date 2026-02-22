@@ -1,10 +1,10 @@
 return {
   cmd = {'typescript-language-server','--stdio'},
-  filetypes = { 
-     'javascript', 
+  filetypes = {
+     'javascript',
      'javascriptreact',
      'typescript',
-     'typescriptreact' 
+     'typescriptreact'
   },
   root_markers = {'.npmrc','tsconfig.json','package.json'},
 }
