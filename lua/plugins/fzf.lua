@@ -27,6 +27,7 @@ return {
 		{ "gb", "<cmd>FzfLua git_bcommits<CR>", desc = "Fzf git_bcommits" },
 		{ "<leader>/", "<cmd>FzfLua live_grep<CR>", desc = "Fzf live_grep" },
 		{ "<leader>o", "<cmd>FzfLua oldfiles<CR>", desc = "Fzf oldfiles" },
-		{ "<C-p>", "<cmd>FzfLua colorschemes<CR>", desc = "Fzf colorschemes" },
+		{ "<C-p>", "<cmd>FzfLua files <CR>", desc = "Fzf files" },
+		{ "<leader>c", "<cmd>FzfLua colorschemes<CR>", desc = "Fzf colorschemes" },
 	},
 }

@@ -9,6 +9,7 @@ return {
     },
     config = function () 
       --uncomment if we do not have telescope
+      ntree_command = require('neo-tree.command')
       --vim.keymap.set('','<Leader>g',function ()
       --   require('neo-tree.command').execute({
       --      source = "git_status",
@@ -18,13 +19,12 @@ return {
       --require('neo-tree').setup({
       --   sources = { "filesystem", "buffers", "git_status", "symbols" },
       --})
-      ntree_command = require('neo-tree.command')
       vim.keymap.set('','<leader>t',function ()
          ntree_command.execute({
             action="close"
          })
          ntree_command.execute({
-            position = "float"
+            position = "right"
          })
       end)
     end
