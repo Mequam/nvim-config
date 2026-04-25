@@ -5,6 +5,32 @@ return {
 	},
 	event = "BufEnter",
 	config = function()
+
+   local roslynLspPath = "/Users/dkennamer/.bin/roslyn-lsp/content/LanguageServer/neutral/Microsoft.CodeAnalysis.LanguageServer.dll"
+   local uv = vim.uv
+   local fs = vim.fs
+	  vim.lsp.config("roslyn_ls",{
+	     cmd = {
+          'dotnet',
+          roslynLspPath,
+          '--logLevel', -- this property is required by the server
+          'Information',
+          '--extensionLogDirectory', -- this property is required by the server
+          fs.joinpath(uv.os_tmpdir(), 'roslyn_ls/logs'),
+          '--stdio',
+        }
+     })
+
+     vim.lsp.config('groovyls', {
+         -- Unix
+         cmd = { "java", "-jar", "/Users/dkennamer/ProgramingWorkshop/groovy-language-server/build/libs/groovy-language-server-all.jar" }
+     })
+
+	  vim.lsp.config("*", { capabilities = vim.lsp.protocol.make_client_capabilities() })
+
+      vim.lsp.enable("groovyls")
+      --vim.lsp.enable("csharp_ls")
+      vim.lsp.enable("roslyn_ls")
 		vim.lsp.enable({
 			"lua_ls",
 		})
@@ -21,17 +47,16 @@ return {
       --basic keymaps for lsp configs
       vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
       vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
-       vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>" )
-       vim.keymap.set("n", "<C-k>", "<cmd>lua vim.lsp.buf.code_action()<CR>" )
-       vim.keymap.set("v", "<C-k>", "<cmd>lua vim.lsp.buf.range_code_action()<CR>" )
-       vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>" )
-       vim.keymap.set("n", "<leader>s", "<cmd>lua vim.lsp.buf.signature_help()<CR>" )
-       vim.keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>" )
-       vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>" )
-       vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>" )
-       vim.keymap.set("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "single" })<CR>' )
-       vim.keymap.set("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "single" })<CR>' )
-       vim.keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>" )
-
+      vim.keymap.set("n", "<leader>h", "<cmd>lua vim.lsp.buf.hover()<CR>" )
+      vim.keymap.set("n", "<C-k>", "<cmd>lua vim.lsp.buf.code_action()<CR>" )
+      vim.keymap.set("v", "<C-k>", "<cmd>lua vim.lsp.buf.range_code_action()<CR>" )
+      vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>" )
+      vim.keymap.set("n", "<leader>s", "<cmd>lua vim.lsp.buf.signature_help()<CR>" )
+      vim.keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>" )
+      vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>" )
+      vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>" )
+      vim.keymap.set("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "single" })<CR>' )
+      vim.keymap.set("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "single" })<CR>' )
+      vim.keymap.set("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>" )
 	end,
 }

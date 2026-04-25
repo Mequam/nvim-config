@@ -4,7 +4,7 @@ return {
     require("zk").setup({
     -- can be "telescope", "fzf", "fzf_lua", "minipick", or "select" (`vim.ui.select`)
      -- it's recommended to use "telescope", "fzf", "fzf_lua", or "minipick"
-     picker = "fzf",
+     picker = "fzf_lua",
      lsp = {
        -- `config` is passed to `vim.lsp.start_client(config)`
 --       config = {
@@ -32,7 +32,7 @@ return {
       end
       
       vim.keymap.set('n','<leader>n',function ()
-         new_note("~/Documents/notes/primary_zk/")
+         new_note("~/notes/")
       end) --make a new note
 
       vim.keymap.set('n','<leader>j',function ()
@@ -50,7 +50,7 @@ return {
       vim.keymap.set('n','<C-N>',function () --find note
          local cw = vim.fn.getcwd()
          
-         vim.api.nvim_set_current_dir("~/Documents/notes/primary_zk/")
+         vim.api.nvim_set_current_dir("~/notes/")
          require("zk.commands").get("ZkNotes")()
          vim.api.nvim_set_current_dir(cw)
       end
