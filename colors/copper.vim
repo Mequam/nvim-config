@@ -891,3 +891,5 @@ hi Normal ctermbg=None
 
 " bionic coloring for compatability reasons
 hi BionicReadingHL gui=standout cterm=underline
+
+hi @variable guifg='#FF9955'
