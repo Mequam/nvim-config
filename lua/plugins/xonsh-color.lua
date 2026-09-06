@@ -1,4 +1,4 @@
 return {
    "meatballs/vim-xonsh",
-   event = "VeryLazy"
+   event = { "BufReadPre", "BufNewFile" }
 }

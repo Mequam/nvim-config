@@ -11,10 +11,6 @@ return {
    local fs = vim.fs
    
    ---xonsh configuration
-   vim.filetype.add({
-     extension = { xsh = 'xonsh', xonshrc = 'xonsh' },
-     filename  = { ['.xonshrc'] = 'xonsh', ['xonshrc'] = 'xonsh' },
-   })
    
    local xonsh_python = vim.fn.system('xonsh -c "import sys; print(sys.executable)"'):gsub('%s+$', '')
    local pythonSettings = {
