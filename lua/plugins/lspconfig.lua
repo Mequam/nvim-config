@@ -9,17 +9,51 @@ return {
    local roslynLspPath = "/Users/dkennamer/.bin/roslyn-lsp/content/LanguageServer/neutral/Microsoft.CodeAnalysis.LanguageServer.dll"
    local uv = vim.uv
    local fs = vim.fs
-	  vim.lsp.config("roslyn_ls",{
-	     cmd = {
-          'dotnet',
-          roslynLspPath,
-          '--logLevel', -- this property is required by the server
-          'Information',
-          '--extensionLogDirectory', -- this property is required by the server
-          fs.joinpath(uv.os_tmpdir(), 'roslyn_ls/logs'),
-          '--stdio',
-        }
-     })
+   
+   ---xonsh configuration
+   vim.filetype.add({
+     extension = { xsh = 'xonsh', xonshrc = 'xonsh' },
+     filename  = { ['.xonshrc'] = 'xonsh', ['xonshrc'] = 'xonsh' },
+   })
+   
+   local xonsh_python = vim.fn.system('xonsh -c "import sys; print(sys.executable)"'):gsub('%s+$', '')
+   local pythonSettings = {
+            pythonPath = xonsh_python,
+            analysis = {
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+            },
+   }
+   vim.lsp.config('xonsh_lsp', {
+     cmd = { 'uvx', '-n', 'xonsh-lsp' },
+     filetypes = { 'xonsh' },
+     root_markers = {  'xonshrc', '.git' },
+     init_options = {
+       pythonBackend = 'pyright',
+
+        backendSettings = {
+          python = pythonSettings,
+        },
+     },
+     settings = {
+       python = pythonSettings,
+     },   
+  })
+   vim.lsp.enable('xonsh_lsp')
+   --end xonsh-lsp
+
+        vim.lsp.config("roslyn_ls",{
+           cmd = {
+             'dotnet',
+             roslynLspPath,
+             '--logLevel', -- this property is required by the server
+             'Information',
+             '--extensionLogDirectory', -- this property is required by the server
+             fs.joinpath(uv.os_tmpdir(), 'roslyn_ls/logs'),
+             '--stdio',
+           }
+  })
+
 
      vim.lsp.config('groovyls', {
          -- Unix
@@ -27,6 +61,7 @@ return {
      })
 
 	  vim.lsp.config("*", { capabilities = vim.lsp.protocol.make_client_capabilities() })
+	  vim.lsp.enable('gdscript')
 
       vim.lsp.enable("groovyls")
       --vim.lsp.enable("csharp_ls")
@@ -36,6 +71,8 @@ return {
 		})
       vim.lsp.enable({'pyright'})
       vim.lsp.enable({'ts_ls'})
+      vim.lsp.enable({'cypher_ls'})
+      vim.lsp.enable({'codebook'})
 
       --vim.lsp.config("java_language_server",{ cmd={"java-lang-server"} })
       --vim.lsp.enable("java_language_server")

@@ -16,5 +16,6 @@
   "nvim-surround": { "branch": "main", "commit": "61319d4bd1c5e336e197defa15bd104c51f0fb29" },
   "nvim-web-devicons": { "branch": "master", "commit": "c72328a5494b4502947a022fe69c0c47e53b6aa6" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
+  "vim-xonsh": { "branch": "master", "commit": "929f35e37ad7dbdec80b1effe295b89c9ac3f090" },
   "zk-nvim": { "branch": "main", "commit": "dea1ee6cd6d07568c92ea8353063d4d85c58a964" }
 }
